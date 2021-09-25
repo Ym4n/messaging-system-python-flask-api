@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "ec0df7d7-ee34-4ff7-bf7c-947ef982ca45",
+		"name": "API test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API exmple",
+			"item": [
+				{
+					"name": "add user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"alex\",\r\n    \"password\":\"4321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"alex\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Science lovers\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/add_group",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"add_group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "join group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/join_group/work",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"join_group",
+								"work"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "leave group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/leave_group/work",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"leave_group",
+								"work"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my_groups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/my_groups",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"my_groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Write msg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipient\":\"work\",\r\n    \"subject\":\"hi work group\",\r\n    \"message\":\"cool4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/send_msg",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"send_msg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get sent msg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/sent",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get inbox msg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/inbox",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"inbox"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get unread inbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/unread",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"unread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read one inbox msg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/inbox/read/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"inbox",
+								"read",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read one sent msg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('msg recived',function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"    const {id} = pm.response.json();\r",
+									"    pm.environment.set('msg_id',id)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/sent/read/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sent",
+								"read",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete msg as sender",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/delet_sent_msg/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"delet_sent_msg",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete msg as recipient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/delet_inbox_msg/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"delet_inbox_msg",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
