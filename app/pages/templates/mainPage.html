@@ -1,0 +1,128 @@
+
+<html>
+    <body>
+        <article class="markdown-body" itemprop="text">
+            <h1><a id="user-content-messaging-system-python-flask-api" class="anchor" aria-hidden="true" href="#messaging-system-python-flask-api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>messaging-system-python-flask-api</h1>
+            <p>rest API backend system that responsible of handling messages between users and group of users.
+            using Flask , sqlalchemy , postgresql.</p>
+            <p><b>features :</b>
+            <br></p>
+            <ol>
+            <li>Authentication by flask-login - user can read/delete only related message. <br></li>
+            <li>many-to-many - user can send message to group or single user.</li>
+            <li>join/add/leave groups</li>
+            </ol>
+            <p>DB models inspired from :
+            <br>
+            <a href="https://vertabelo.com/blog/database-model-for-a-messaging-system/" rel="nofollow">https://vertabelo.com/blog/database-model-for-a-messaging-system/</a></p>
+            <p>
+                go and check the github repo at : 
+                <a href="https://github.com/Ym4n/messaging-system-python-flask-api" rel="nofollow">https://github.com/Ym4n/messaging-system-python-flask-api</a>
+            </p>
+            <p>quick exmple :</p>
+
+            <table>
+            <thead>
+            <tr>
+            <th>API function</th>
+            <th>Method</th>
+            <th>URL</th>
+            <th>notes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>add user</td>
+            <td>POST</td>
+            <td>/signup</td>
+            <td>json with username and password</td>
+            </tr>
+            <tr>
+            <td>login</td>
+            <td>POST</td>
+            <td>/login</td>
+            <td>json with username and password</td>
+            </tr>
+            <tr>
+            <td>add_group</td>
+            <td>POST</td>
+            <td>/add_group</td>
+            <td>json with name</td>
+            </tr>
+            <tr>
+            <td>join_group</td>
+            <td>POST</td>
+            <td>/join_group/&lt;string:group name&gt;</td>
+            <td></td>
+            </tr>
+            <tr>
+            <td>leave_group</td>
+            <td>POST</td>
+            <td>/leave_group/&lt;string:group name&gt;</td>
+            <td></td>
+            </tr>
+            <tr>
+            <td>my_groups</td>
+            <td>GET</td>
+            <td>/my_groups</td>
+            <td></td>
+            </tr>
+            <tr>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+            </tr>
+            <tr>
+            <td>write new message</td>
+            <td>POST</td>
+            <td>/api/send_msg</td>
+            <td>json with message</td>
+            </tr>
+            <tr>
+            <td>get sent messages</td>
+            <td>GET</td>
+            <td>/api/sent</td>
+            <td>A short version message</td>
+            </tr>
+            <tr>
+            <td>get inbox messages</td>
+            <td>GET</td>
+            <td>api/inbox</td>
+            <td>A short version message</td>
+            </tr>
+            <tr>
+            <td>get unread messages</td>
+            <td>GET</td>
+            <td>/api/unread</td>
+            <td>A short version message</td>
+            </tr>
+            <tr>
+            <td>Read one msg from inbox</td>
+            <td>GET</td>
+            <td>/api/inbox/read/{{msg_id}}</td>
+            <td>msg_id= the id of specific msg , full version message</td>
+            </tr>
+            <tr>
+            <td>Read one msg from sent</td>
+            <td>GET</td>
+            <td>/api/sent/read/{{msg_id}}</td>
+            <td>msg_id= the id of specific msg , full version message</td>
+            </tr>
+            <tr>
+            <td>delete sent msg</td>
+            <td>DELETE</td>
+            <td>/api/delet_sent_msg/{{msg_id}}</td>
+            <td>msg_id= the id of specific msg</td>
+            </tr>
+            <tr>
+            <td>delete inbox msg</td>
+            <td>DELETE</td>
+            <td>/api/delet_inbox_msg/{{msg_id}}</td>
+            <td>msg_id= the id of specific msg</td>
+            </tr>
+            </tbody>
+            </table>
+        </article>
+    </body>
+</html>
